@@ -1,0 +1,168 @@
+/* General Reset & Font */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+/* Hide both sections by default */
+.mobile-warning,
+.desktop-content {
+  display: none;
+}
+
+/* ========== MOBILE VIEW ========== */
+@media (max-width: 767px) {
+  .mobile-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe0ec, #c8e9f7);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Background animated blobs */
+  .animated-blobs .blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 10s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  .blob1 {
+    width: 200px;
+    height: 200px;
+    background: #ff8a80;
+    top: -40px;
+    left: -60px;
+  }
+
+  .blob2 {
+    width: 280px;
+    height: 280px;
+    background: #82b1ff;
+    bottom: -60px;
+    right: -80px;
+    animation-delay: 3s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+  /* The main warning content box */
+  .warning-box {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 1s ease;
+    max-width: 90%;
+    width: 340px;
+  }
+
+  .warning-gif {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 20px;
+    margin: 15px auto 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: pulse 2s infinite;
+  }
+
+  .emoji {
+    font-size: 2.5rem;
+    animation: bounce 1.4s infinite;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: #c62828;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 6px;
+  }
+
+  @keyframes scaleIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 10px #f8bbd0; }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px #f48fb1; }
+  }
+}
+
+/* ========== DESKTOP VIEW ========== */
+@media (min-width: 768px) {
+  .desktop-content {
+    display: block;
+    height: 100vh;
+    background-color: #fff;
+  }
+}
+
+/* ========== Canvas & Image ========== */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  pointer-events: none;
+}
+
+img {
+  width: 150px;
+  height: auto;
+  overflow: clip;
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+
+/* ========== Additional (Optional for Typewriter / Say Effect) ========== */
+#code {
+  display: none;
+  font-size: 20px;
+  color: #444;
+  padding: 20px;
+  text-align: center;
+}
+
+#clock-box {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.say {
+  display: block;
+  margin: 8px 0;
+  font-weight: bold;
+  color: #d32f2f;
+  font-size: 1.2em;
+}
