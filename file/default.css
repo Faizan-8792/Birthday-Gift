@@ -124,3 +124,104 @@ a {
       margin-bottom: 20px;
     }
   }
+
+  .mobile-warning {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body *:not(.mobile-warning):not(.mobile-warning *) {
+    display: none !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .mobile-warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+      0 10px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    transform: rotateX(10deg) rotateY(-10deg);
+    text-align: center;
+    max-width: 90%;
+    color: #333;
+    animation: floatBox 3s ease-in-out infinite;
+  }
+
+  .mobile-warning img {
+    max-width: 120px;
+    margin-bottom: 20px;
+    animation: pop 1.5s ease-in-out infinite;
+  }
+
+  .mobile-warning p {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  @keyframes floatBox {
+    0%, 100% {
+      transform: rotateX(10deg) rotateY(-10deg) translateY(0);
+    }
+    50% {
+      transform: rotateX(10deg) rotateY(-10deg) translateY(-10px);
+    }
+  }
+
+  @keyframes pop {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Glowing Button */
+#shaadiBtn {
+  display: none; /* DO NOT REMOVE */
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #fe21a2;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: glow 2s infinite alternate;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#shaadiBtn:hover {
+  transform: scale(1.08);
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #fe21a2, 0 0 10px #fe21a2;
+  }
+  50% {
+    box-shadow: 0 0 20px #fe21a2, 0 0 40px #fe21a2;
+  }
+  100% {
+    box-shadow: 0 0 5px #fe21a2, 0 0 10px #fe21a2;
+  }
+}
