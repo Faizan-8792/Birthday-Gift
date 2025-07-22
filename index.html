@@ -324,6 +324,24 @@
         });
     })();
 </script>
+<script>
+  const folder = "cursor6";  
+  const frameCount = 2;  // You said you have 2 frames
+
+  const frames = [];
+  for (let i = 1; i <= frameCount; i++) {
+    frames.push(`${folder}/frame${i}.png`);
+  }
+
+  let index = 0;
+  const fps = 4; // Try 2–4 FPS to reduce flicker
+
+  setInterval(() => {
+    document.body.style.cursor = `url(${frames[index]}), auto`;
+    index = (index + 1) % frames.length;
+  }, 1000 / fps);  // Fixed from 2000 → 1000
+</script>
+
 
 </body>
 </html>
